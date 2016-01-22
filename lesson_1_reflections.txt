@@ -1,0 +1,27 @@
+En esta primera lección he instalado git.
+
+Git es una herramienta de control de versiones.
+
+Está constituida por un conjunto de herramientas, entre ellas
+cabe destacar gitbash que es un emulador de sistemas unix en 
+linea de comandos para windows.
+
+He configurado gitbash para lanzar Notepad++ desde la linea de comandos
+con el alias note. Para ello he realizado las siguientes acciones, extraidas 
+del tutorial https://www.udacity.com/wiki/ud775/sublime:
+
+1.- Asegurar el path de la aplicación: 
+ls C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe
+
+2.- Modificar el fichero .bashrc en el directorio home (~ =  C:\Usuarios\Sergio):
+echo 'alias note="C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe"' >> ~/.bashrc
+
+3.- Reiniciar gitbash.
+
+También he utilizado la herramienta de linea de comandos diff para comparar dos versiones 
+de un fichero de codigo y localizar un error (la palabra space-spacr).
+1.- diff -u game_old.js game_new.js
+
+git config --global core.editor "'C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe' -n -w"
+git config --global push.default upstream
+git config --global merge.conflictstyle diff3
