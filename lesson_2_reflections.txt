@@ -1,0 +1,77 @@
+CREAR y GESTIONAR UN REPOSITORIO OFFLINE
+---¿Que ocurre cuando inicias un repositorio?
+
+Se crea un repositorio vacio es decir no contiene ningun commit.
+Se crea un subdirectorio oculto (.git) que contiene la metainformacion
+necesaria para la gestión del repositorio. Puedo ejecutar >ls -a para
+ver el contenido oculto en un directorio.
+
++++Para crear (iniciar) un nuevo repositorio:
+1.- Situarse en el directorio que contiene los ficheros que estarán en el nuevo
+repositorio y ejecutar-> git init
+Esta orden crea un nuevo repositorio sin ningun commit
+2.- Si accedo al historial del nuevo repositorio ejecutando-> git log
+Se produce un error indicando que no existe ningun commit
+3.- Puedo comprobar que el repositorio ha sido creado ejecutando-> git status
+Cuando un nuevo repositorio ha sido creado esta orden nos mostrará
+los ficheros que aun no han sido commiteados ni han sido añadidos al
+conjunto de ficheros que serán trackeados por el repositorio.
+
+---¿Porque necesito iniciar un repositorio?
+Mediante la orden >git init se inicia un repositorio nuevo, se crean
+las estructuras necesarias para contener la metainformación de gestion
+del repositorio.
+
+---¿Que diferencia la "staging area" del directorio de trabajo y del repositorio?
+La "staging area" forma parte de git y contiene un listado de los ficheros que estan
+siendo seguidos (trackeados) en el repositorio. El directorio de trabajo puede contener
+ficheros que no estan siendo trackeados en el repositorio. El repositorio contiene el
+historial de cambios de los ficheros listados en la "staging area".
+
+Puedo añadir un fichero al staging area mediante la orden >git add nombre_fichero y
+comprobar su efecto mediante la orden >git status
+
++++Problemas detectados y solucionados al realizar el primer commit en el repositorio de
+"reflections":
+Una vez añadido mediante la orden >git add lesson_1_reflections.txt el fichero a la 
+"staging area" intento realizar el primer commit mediante la orden >git commit.
+
+1.-Me situo en el directorio del nuevo repositorio /c/version-control/reflections y lanzo 
+la orden >git commit
+2.- Obtengo lo siguiente:
+$ git commit
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <Sergio@Sergio-PC.(none)>) not allowed
+3.-Tal y como se solicita en el mensaje anterior especifico mi identidad mediante
+las ordenes siguientes:
+>git config --global user.name "Sergio"
+>git config --global user.email "sergiogalanarmijo@gmail.com"
+4.-Lanzo de nuevo la orden >git commit y obtengo lo siguiente:
+$ git commit
+'C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe' -n -w: C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe: No such file or directory
+error: There was a problem with the editor ''C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe' -n -w'.
+Please supply the message using either -m or -F option.
+5.- Observo que es un problema en el path del editor notepad++:
+En la leccion 1 configure el espacio de trabajo de git de manera que->
+    a)Asigné Notepad++ como editor por defecto de git mediante las ordenes siguientes:
+    >git config --global core.editor "'C:/Program\ Files\ \(x86\)/Notepad++/notepad++.exe' -n -w"
+    >git config --global push.default upstream
+    >git config --global merge.conflictstyle diff3
+    b)Git utiliza su editor por defecto para redactar el texto descriptivo del commit.
+6.- SOLUCION: Relanzar las ordenes 5.a modificando el path de Notepad++ eliminando el caracter '\'.
+    >git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -n -w"
+    >git config --global push.default upstream
+    >git config --global merge.conflictstyle diff3
+7.- Lanzo la orden >git commit esta vez si se ejecuta Notepad++ como editor por defecto de Git
+y puedo redactar el texto descriptivo del commit salvar y salir de Notepad++.
+Nota: El texto descriptivo puede dar errores al introducir ':' o más de una linea.
