@@ -101,3 +101,14 @@ un commit.
 4.- >git add <filename> :añade los cambios realizados en el fichero <filename> al staging area.
 5.- >git commit         :crea un nuevo commit con el contenido de las modificaciones del staging area.
 6.- >git status         :muestra el estado de los ficheros del working directorio en relacion a la staging area.
+
+---¿En que situaciones los branches son utiles para mantener ordenado el historial de commits?
+1.-Queremos probar un cambio experimental en el software.
+2.-Queremos desarrollar una version especial del software.
+En ambas situaciones podemos utilizar los branches (ramificaciones) del historial de commits para mantener
+ordenado nuestro historial y poder acceder a las nuevas versiones o retomar el desarrollo original.
+
++++Ordenes utiles branches:
+1.- >git branch                 :muestra los branches existentes y nos indica el branch actual.
+2.- >git branch <namebranch>    :crea un nuevo branch y lo etiqueta con <namebranch>
+3.- >git checkout <namebranch>  :establece el branch etiquetado con <namebranch> como branch actual.
