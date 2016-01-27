@@ -87,3 +87,17 @@ desreferenciados (perdidos). Para acceder a ellos utilizaremos la orden >git ref
 2.- Ejecutar la siguiente orden utilizando los IDs del paso anterior del mas antiguo al
 mas nuevo: >git cherry-pick ID ejemplo >git cherry-pick 88615db
 3.- Podemos comprobar que todo esta correcto con >git status y >git log
+
+---¿Como puedo usar la staging area para facilitar la creacion de un commit por cambio logico?
+Antes de realizar un commit puedo haber realizado mas de "un cambio logico". Cuando dichos 
+cambios logicos estan separados en distintos ficheros fisicos, puedo utilizar
+el staging area para agrupar las modificaciones pertenecientes a un solo cambio logico y realizar
+un commit.
+
++++Ordenes utiles:
+1.- >git diff           :compara el working directory con el staging area
+2.- >git diff --staged  :compara el staging area con el último commit en el repositorio.
+3.- >git reset --hard   :elimina cualquier cambio en el working directory y en la staging area.
+4.- >git add <filename> :añade los cambios realizados en el fichero <filename> al staging area.
+5.- >git commit         :crea un nuevo commit con el contenido de las modificaciones del staging area.
+6.- >git status         :muestra el estado de los ficheros del working directorio en relacion a la staging area.
