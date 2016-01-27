@@ -69,7 +69,7 @@ En la leccion 1 configure el espacio de trabajo de git de manera que->
     >git config --global merge.conflictstyle diff3
     b)Git utiliza su editor por defecto para redactar el texto descriptivo del commit.
 6.- SOLUCION: Relanzar las ordenes 5.a modificando el path de Notepad++ eliminando el caracter '\'.
-    >git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -n -w"
+    >git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -n"
     >git config --global push.default upstream
     >git config --global merge.conflictstyle diff3
 7.- Lanzo la orden >git commit esta vez si se ejecuta Notepad++ como editor por defecto de Git
