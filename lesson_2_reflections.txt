@@ -75,3 +75,15 @@ En la leccion 1 configure el espacio de trabajo de git de manera que->
 7.- Lanzo la orden >git commit esta vez si se ejecuta Notepad++ como editor por defecto de Git
 y puedo redactar el texto descriptivo del commit salvar y salir de Notepad++.
 Nota: El texto descriptivo puede dar errores al introducir ':' o más de una linea.
+
++++Solucion al Problema: HEAD detached.
+Este problema ocurre cuando, después de utilizar operaciones >git checkout para
+volver a versiones anteriores a la mas reciente, dejamos desreferenciados commits.
+
+Solucion:
+0.- Utilizar la orden (>git checkout master) para eliminar el mensaje de "HEAD detached".
+1.- Si utilizamos el commando >git log NO podemos acceder a los IDs de los commits
+desreferenciados (perdidos). Para acceder a ellos utilizaremos la orden >git reflog.
+2.- Ejecutar la siguiente orden utilizando los IDs del paso anterior del mas antiguo al
+mas nuevo: >git cherry-pick ID ejemplo >git cherry-pick 88615db
+3.- Podemos comprobar que todo esta correcto con >git status y >git log
