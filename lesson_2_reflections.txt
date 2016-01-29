@@ -112,3 +112,33 @@ ordenado nuestro historial y poder acceder a las nuevas versiones o retomar el d
 1.- >git branch                 :muestra los branches existentes y nos indica el branch actual.
 2.- >git branch <namebranch>    :crea un nuevo branch y lo etiqueta con <namebranch>
 3.- >git checkout <namebranch>  :establece el branch etiquetado con <namebranch> como branch actual.
+
++++Observacion en el comando >git log :Error de compatibilidad entre scroll.
+Cuando utilicemos el comando >git log usar siempre las flechas de teclado para
+realizar scroll, si combinamos las flechas de teclado y la rueda de raton para
+realizar scroll se producen errores de repeticion de texto (commits) que nos pueden
+llevar a confusion.
+
+---¿Como te ayudan los diagramas a visualizar la estructura de ramificaciones (branch)?
+El repositorio (historial de commits) tiene una estructura de grafo dirigido, donde:
+1.- Cada nodo representa un commit.
+2.- El nodo raiz es el primer commit del proyecto.
+3.- Un branch es una sucesion de nodos conectados mediante arcos dirigidos.
+4.- Cada vez que realizamos un commit se crea un arco dirigido desde el nuevo commit
+hasta el commit "marcado como actual" y despues se marca el nuevo commit como actual.
+5.- El comando >git checkout ID "marca como actual" el commit (nodo) identificado con ID.
+6.- El comando >git log lista el conjunto de commits (nodos) desde el nodo marcado como
+actual hasta el commit inicial (nodo origen) siguiendo la direccion de los arcos dirigidos.
+7.- En todos los repositorios creados en git existe un branch (rama) principal etiquetada como master.
+8.- El branch master representa el desarrollo principal del proyecto.
+9.- Una branch es identificado mediante una etiqueta. Esta etiqueta identifica al commit
+mas reciente dentro de la branch.
+10.- La orden >git checkout master "marca como commit actual" al commit mas reciente en la branch
+principal.
+
++++Ordenes utilies:
+1.- >git log --graph --oneline <branchname1> <branchname2> : muestra en forma de grafo textual
+la estructura de ramificaciones del repositorio incluyendo solo las ramas branchname1 y branchname2.
+2.- >git checkout -b <branchname> :equivale a lanzar la siguiente secuencia de ordenes:
+    >git branch <branchname>
+    >git checkout <branchname>
