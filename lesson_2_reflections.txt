@@ -142,3 +142,23 @@ la estructura de ramificaciones del repositorio incluyendo solo las ramas branch
 2.- >git checkout -b <branchname> :equivale a lanzar la siguiente secuencia de ordenes:
     >git branch <branchname>
     >git checkout <branchname>
+
+---¿Cual es el resultado de mezclar dos branch?
+Un nuevo commit con las modificaciones de ambos branch cuyos padres son las cabezas de ambos branch.
+Para mezclar dos branch git sigue la siguiente estrategia:
+1.- Considera el commit mas reciente comun a ambos branch.
+2.- Teniendo en cuenta las lineas añadidas y eliminadas en ambos branch respecto al commit comun mas reciente
+    a) mantiene las lineas que no han sido ni añadidas ni eliminadas
+    b) añade las lineas que han sido añadidas en cualquiera de los dos branch
+    c) elimina las lineas que han sido eliminadas en cualquiera de los dos branch
+Una vez realizada la mezcla (merge) de dos branch:
+1.-La orden >git log muestra los commit de ambos branch intercalados y ordenados segun su fecha de creacion.
+2.-La orden >git diff id1 id2 muestra las diferencias de los commit id1 e id2 incluyendo los cambios de ambos
+branch, si queremos obtener las diferencias de un commit con su padre tendremos que utilizar la orden
+>git show id
+
++++Ordenes utiles:
+1.- >git merge master coins :realiza un merge de los branch master y coins, actualiza la cabeza de master
+al commit creado en el merge
+2.- >git branch -d coins    :elimina la etiqueta del branch coins
+3.- >git show ID            :realiza la operacion diff entre el commit identificado por ID y su padre.
