@@ -22,3 +22,5 @@ manual en lugar de que git realizara una actualización automática?
 desde la linea de comandos.
 2.- >git pull origin master :actualiza el branch master de mi repositorio local con el nuevo contenido
 de repositorio remoto origin
+
+*Prueba credential.helper
