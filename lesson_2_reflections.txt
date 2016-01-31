@@ -146,6 +146,7 @@ la estructura de ramificaciones del repositorio incluyendo solo las ramas branch
 ---¿Cual es el resultado de mezclar dos branch?
 Un nuevo commit con las modificaciones de ambos branch cuyos padres son las cabezas de ambos branch.
 Para mezclar dos branch git sigue la siguiente estrategia:
+0.- Primero he de situarme en el branch que quiero que contenga el merge mediante >git checkout <branchname>
 1.- Considera el commit mas reciente comun a ambos branch.
 2.- Teniendo en cuenta las lineas añadidas y eliminadas en ambos branch respecto al commit comun mas reciente
     a) mantiene las lineas que no han sido ni añadidas ni eliminadas
@@ -158,7 +159,9 @@ branch, si queremos obtener las diferencias de un commit con su padre tendremos 
 >git show id
 
 +++Ordenes utiles:
-1.- >git merge master coins :realiza un merge de los branch master y coins, actualiza la cabeza de master
-al commit creado en el merge
+1.- >git merge master coins :realiza un merge de los branch master y coins, actualiza la cabeza del branch, en
+el que estemos situados actualmente, al commit que se crea al realizar el merge.
 2.- >git branch -d coins    :elimina la etiqueta del branch coins
 3.- >git show ID            :realiza la operacion diff entre el commit identificado por ID y su padre.
+
+---
