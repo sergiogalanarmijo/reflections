@@ -1,0 +1,14 @@
+---¿En que casos querrias usar un repositorio remoto para almacenar todo tu trabajo local?
+1.- Compartir con otros usuarios mi trabajo local.
+2.- Desarrollar de forma conjunta con otros usuarios un proyecto comun.
+3.- Acceder desde distintas maquinas a mi trabajo.
+4.- Utilizar un repositorio remoto como copia de seguridad.
+
++++Ordenes utilizadas para la creacion del repositorio remoto:
+0.- Situarme en el path del repositorio local del que deseo obtener un repositorio remoto
+1.- >git remote     :muestra todos los repositorios remotos referenciados en mi pc.
+2.- >git remote add origin https://github.com/sergiogalanarmijo/reflections.git
+añade un nuevo repositorio remoto identificado como origin cuya url es la mostrada.
+3.- >git remote -v  :muestra info adicional (url) de todos los repositorios referenciados.
+4.- >git push origin master :actualiza el branch master de mi repositorio local en el
+repositorio remoto origin.
