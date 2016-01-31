@@ -12,3 +12,13 @@ añade un nuevo repositorio remoto identificado como origin cuya url es la mostr
 3.- >git remote -v  :muestra info adicional (url) de todos los repositorios referenciados.
 4.- >git push origin master :actualiza el branch master de mi repositorio local en el
 repositorio remoto origin.
+
+---¿Porque realizar las actualizaciones (pull) desde el directorio remoto al local de forma
+manual en lugar de que git realizara una actualización automática?
+1.- El directorio remoto puede contener cambios que no deseas incorporar a tu version actual local.
+
++++Ordenes utiles:
+1.- >git config --global credential.helper wincred :almacena usuario y password para acceder a github
+desde la linea de comandos.
+2.- >git pull origin master :actualiza el branch master de mi repositorio local con el nuevo contenido
+de repositorio remoto origin
