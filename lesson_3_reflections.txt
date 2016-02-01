@@ -24,3 +24,18 @@ desde la linea de comandos.
 de repositorio remoto origin
 
 *Prueba credential.helper
+
+---Describe las diferencias entre Fork, Clone y Branch. ¿Cuando usarías uno en lugar de otro?
+Un Branch es una ramificacion dentro de un repositorio Local.
+1.- Version especial de mi repositorio.
+2.- Experimento con mi codigo
+3.- Prueba para solucionar un bug.
+Clone es una operacion que copia un repositorio desde una ubicación, remota o local, a otra local.
+Las operaciones de push modifican el repositorio original.
+1.- Colaboracion en un proyecto donde tengo permisos para realizar modificaciones sobre el repositorio
+original.
+Fork es una operacion especifica de GITHUB que copia un repositorio de GITHUB sobre otra cuenta de usuario
+de GITHUB. Deja constancia de quien es el creador del repositorio original. Las operaciones de push no
+modifican el repositorio original sino la copia.
+1.- Modificacion de un proyecto donde no tengo permisos para realizar modificaciones directamente sobre
+el repositorio original.
