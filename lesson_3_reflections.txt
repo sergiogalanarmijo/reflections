@@ -39,3 +39,18 @@ de GITHUB. Deja constancia de quien es el creador del repositorio original. Las 
 modifican el repositorio original sino la copia.
 1.- Modificacion de un proyecto donde no tengo permisos para realizar modificaciones directamente sobre
 el repositorio original.
+
+---¿Cuales son los beneficios de tener una copia del ultimo estado conocido del remoto, almacenado en local?
+Git mantiene una copia del ultimo estado conocido del repositorio remoto mediante la etiqueta de branch 
+"origin/master", que marca el ultimo commit conocido del repositorio remoto desde la ULTIMA VEZ QUE HICE PUSH o PULL.
+Esto permite tener la informacion necesaria para sicronizar el contenido de los repositorios remoto y local a la hora
+de realizar un push o un pull, en las siguientes ocasiones:
+1.- Hemos añadido commit en local y aun no hemos realizado un push al remoto.
+2.- Hemos añadido commit en remoto y aun no hemos realizado un pull al local.
+3.- Hemos añadido commit en local sin realizar push y hemos añadido commit en remoto sin realizar pull.
+
++++Ordenes utiles:
+1.- >git fetch origin   :actualiza el branch local origin/master con los commit nuevos del repositorio remoto. 
+Esto puede puede crear una rama que diverja de la rama principal local master. 
+La orden >git status nos avisará de que existe una divergencia.
+2.- >git pull origin master == >git fetch origin >git merge master origin/master 
