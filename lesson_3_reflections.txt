@@ -54,3 +54,19 @@ de realizar un push o un pull, en las siguientes ocasiones:
 Esto puede puede crear una rama que diverja de la rama principal local master. 
 La orden >git status nos avisará de que existe una divergencia.
 2.- >git pull origin master == >git fetch origin >git merge master origin/master 
+
+---¿Como realizarias un desarrollo colaborativo sin usar Git y GitHUB? 
+¿Que seria mas facil y que seria mas complicado?
+Para realizar un desarrollo colaborativo sin GIT y GITHUB (sin otra herramienta de control de versiones)
+seria necesario gestionar una estructura de ficheros que implementara el control de versiones y por otro
+lado habria que establecer herramientas de comunicación y protocolos de modificacion de dicha estructura
+de ficheros.
+
++++ GITHUB proporciona el mecanismo de las "pull request" para proponer cambios al resto de colaboradores.
+Ejemplo:
+1.- Creamos en nuestro repositorio local un branch con el cambio que queremos proponer.
+2.- Realizamos un push del nuevo branch local al repositorio remoto comun.
+3.- Realizamos una pull request de nuestro cambio propuesto asociado al nuevo branch.
+4.- El resto de colaboradores pueden evaluar el cambio propuesto antes de ser incorporado al master en GITHUB.
+5.- Una vez evaluado y aceptado se realiza el merge en el master del remoto de GITHUB.
+6.- se realiza el pull actualizando en el repositorio local de todos los colaboradores. 
